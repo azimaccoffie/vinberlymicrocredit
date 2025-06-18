@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinberly Micro Credit Enterprise - Empowering Ghanaian Dreams</title>
+    <meta name="description" content="Ghana's trusted microfinance institution offering fast, flexible loans for small businesses, traders, and farmers across all 16 regions.">
+    <link rel="canonical" href="https://www.vinberly.com">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1976D2;
+            --secondary-purple: #8E24AA;
+            --accent-green: #2E7D32;
+            --accent-orange: #F57C00;
+            --accent-red: #C62828;
+            --warm-brown: #5D4037;
+            --light-cream: #FFF8E1;
+            --success-green: #4CAF50;
+            --text-dark: #1A1A1A;
+            --text-gray: #424242;
+            --border-light: #E0E0E0;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --kente-gradient: linear-gradient(45deg, #1976D2 25%, #8E24AA 25%, #8E24AA 50%, #C62828 50%, #C62828 75%, #1976D2 75%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(25, 118, 210, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .top-bar {
+            background: var(--warm-brown);
+            padding: 8px 0;
+            font-size: 0.85rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+            opacity: 0.9;
+        }
+
+        .social-links a {
+            color: white;
+            margin-left: 15px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+        }
+
+        .main-nav {
+            padding: 15px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            margin-right: 10px;
+            border-radius: 8px;
+            object-fit: cover;
+            background: var(--secondary-purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--light-cream);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--light-cream);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .lang-selector {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-left: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-selector:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section with Carousel */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .carousel-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slide 15s infinite;
+        }
+
+        .carousel-slide {
+            width: 33.33%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .carousel-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(25, 118, 210, 0.7);
+            z-index: 1;
+        }
+
+        .slide1 {
+            background-image: linear-gradient(rgba(25, 118, 210, 0.3), rgba(25, 118, 210, 0.7)), 
+                              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231976D2" width="1200" height="600"/><g fill="white" opacity="0.1"><circle cx="200" cy="150" r="100"/><circle cx="800" cy="350" r="80"/><circle cx="1000" cy="100" r="60"/><rect x="100" y="400" width="200" height="100" rx="10"/><rect x="700" y="450" width="150" height="80" rx="8"/></g></svg>');
+        }
+
+        .slide2 {
+            background-image: linear-gradient(rgba(142, 36, 170, 0.3), rgba(142, 36, 170, 0.7)), 
+                              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%238E24AA" width="1200" height="600"/><g fill="white" opacity="0.15"><path d="M100 200 L300 150 L250 300 Z"/><path d="M600 100 L800 180 L700 350 Z"/><path d="M950 250 L1100 200 L1050 400 Z"/><circle cx="400" cy="400" r="50"/><circle cx="900" cy="450" r="40"/></g></svg>');
+        }
+
+        .slide3 {
+            background-image: linear-gradient(rgba(198, 40, 40, 0.3), rgba(198, 40, 40, 0.7)), 
+                              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23C62828" width="1200" height="600"/><g fill="white" opacity="0.1"><polygon points="200,100 300,200 100,250"/><polygon points="700,150 850,100 800,300"/><polygon points="1000,200 1150,250 950,400"/><rect x="400" y="350" width="150" height="100" rx="15"/></g></svg>');
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            30% { transform: translateX(0); }
+            33.33% { transform: translateX(-33.33%); }
+            63.33% { transform: translateX(-33.33%); }
+            66.66% { transform: translateX(-66.66%); }
+            96.66% { transform: translateX(-66.66%); }
+            100% { transform: translateX(0); }
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--secondary-purple);
+            color: white;
+            box-shadow: 0 4px 15px rgba(142, 36, 170, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #6a1b9a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(142, 36, 170, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .trust-item .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--light-cream);
+        }
+
+        .trust-item .label {
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Loan Products Section */
+        .loan-products {
+            padding: 100px 0;
+            background: var(--light-cream);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-purple);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--kente-gradient);
+            opacity: 0.1;
+            border-radius: 50%;
+            transform: translate(50%, -50%);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .product-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .product-details {
+            margin: 20px 0;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .detail-label {
+            color: var(--text-gray);
+        }
+
+        .detail-value {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* Calculator Section */
+        .calculator-section {
+            padding: 80px 0;
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .calculator-form {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        .calculator-result {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .result-value {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--light-cream);
+        }
+
+        /* Branch Locator */
+        .branch-locator {
+            padding: 80px 0;
+            background: var(--light-cream);
+        }
+
+        .locator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .map-placeholder {
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .branch-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .branch-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .branch-name {
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            height: 400px;
+            background: linear-gradient(135deg, var(--light-cream), #f0f0f0);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px dashed var(--primary-blue);
+            border-radius: 10px;
+            opacity: 0.3;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: var(--light-cream);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--secondary-purple);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--secondary-purple);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            color: #999;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-blue);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                margin: 10px 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero {
+                height: 80vh;
+                margin-top: 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .trust-indicators {
+                gap: 20px;
+            }
+
+            .trust-item .number {
+                font-size: 1.5rem;
+            }
+
+            .calculator-container,
+            .locator-container,
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Translation utility */
+        .hidden {
+            display: none;
+        }
+        
+        /* Language selector improvements */
+        .lang-selector-container {
+            position: relative;
+        }
+        
+        .lang-selector {
+            appearance: none;
+            padding: 8px 32px 8px 15px;
+        }
+        
+        .lang-selector-arrow {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: white;
+        }
+        
+        /* Language notification */
+        .lang-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-green);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .lang-notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> +233 24 673 8886</span>
+                        <span><i class="fab fa-whatsapp"></i> +233 24 673 8886</span>
+                        <span><i class="fas fa-envelope"></i> info@vinberly.com</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/vinberly" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/vinberly" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/vinberly" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.tiktok.com/@vinberly" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <div class="nav-content">
+                    <a href="#home" class="logo">
+                        <div class="logo-img">V</div>
+                        Vinberly
+                    </a>
+                    
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="#home" data-translate="nav-home">Home</a></li>
+                        <li><a href="#loans" data-translate="nav-loans">Loans</a></li>
+                        <li><a href="#calculator" data-translate="nav-calculator">Calculator</a></li>
+                        <li><a href="#branches" data-translate="nav-branches">Branches</a></li>
+                        <li><a href="#about" data-translate="nav-about">About</a></li>
+                        <li><a href="#contact" data-translate="nav-contact">Contact</a></li>
+                        <li><a href="#apply" class="btn btn-primary" data-translate="apply-now">Apply Now</a></li>
+                    </ul>
+                    
+                    <div class="lang-selector-container">
+                        <select class="lang-selector" id="languageSelector" aria-label="Select Language">
+                            <option value="en">English</option>
+                            <option value="tw">Twi</option>
+                            <option value="ga">Ga</option>
+                            <option value="ee">Ewe</option>
+                            <option value="ha">Hausa</option>
+                        </select>
+                        <div class="lang-selector-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero" id="home">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-slide slide1"></div>
+                <div class="carousel-slide slide2"></div>
+                <div class="carousel-slide slide3"></div>
+            </div>
+            <div class="carousel-indicators">
+                <div class="indicator active" data-slide="0"></div>
+                <div class="indicator" data-slide="1"></div>
+                <div class="indicator" data-slide="2"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-translate="hero-title">Empowering Ghanaian Dreams Through Accessible Finance</h1>
+                <p class="subtitle" data-translate="hero-subtitle">Fast, Flexible, Fair - Your Trusted Financial Partner Since 2009</p>
+                
+                <div class="hero-cta">
+                    <a href="#apply" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        <span data-translate="apply-loan">Apply for Loan</span>
+                    </a>
+                    <a href="#calculator" class="btn btn-secondary">
+                        <i class="fas fa-calculator"></i>
+                        <span data-translate="calculate-repayment">Calculate Repayment</span>
+                    </a>
+                    <a href="#branches" class="btn btn-secondary">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-translate="find-branch">Find Branch</span>
+                    </a>
+                </div>
+                
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <div class="number">50,000+</div>
+                        <div class="label" data-translate="satisfied-customers">Satisfied Customers</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="number">15+</div>
+                        <div class="label" data-translate="years-trust">Years of Trust</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="number">GHS 500M+</div>
+                        <div class="label" data-translate="loans-disbursed">Loans Disbursed</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="number">45</div>
+                        <div class="label" data-translate="branches-nationwide">Branches Nationwide</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Products Section -->
+    <section class="loan-products" id="loans">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="loan-products-title">Our Loan Products</h2>
+                <p data-translate="loan-products-subtitle">Tailored financial solutions for every need</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-business-time"></i>
+                    </div>
+                    <h3 data-translate="business-loan">Business Expansion Loan</h3>
+                    <p data-translate="business-loan-desc">Fuel your business growth with flexible financing options</p>
+                    <div class="product-details">
+                        <div class="detail-row">
+                            <span class="detail-label" data-translate="amount-range">Amount Range:</span>
+                            <span class="detail-value">GHS 1,000 - 50,000</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label" data-translate="interest-rate">Interest Rate:</span>
+                            <span class="detail-value">12% - 18% p.a.</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label" data-translate="repayment-period">Repayment Period:</span>
+                            <span class="detail-value">3 - 24 months</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3 data-translate="agric-loan">Agricultural Loan</h3>
+                    <p data-translate="agric-loan-desc">Support for farmers to maximize harvest potential</p>
+                    <div class="product-details">
+                        <div class="detail-row">
+                            <span class="detail-label" data-translate="amount-range">Amount Range:</span>
+                            <span class="detail-value">GHS 500 - 20,000</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label" data-translate="interest-rate">Interest Rate:</span>
+                            <span class="detail-value">10% - 15% p.a.</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label" data-translate="repayment-period">Repayment Period:</span>
+                            <span class="detail-value">6 - 18 months</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 data-translate="home-loan">Home Improvement Loan</h3>
+                    <p data-translate="home-loan-desc">Renovate and upgrade your living space</p>
+                    <div class="product-details">
+                        <div class="detail-row">
+                            <span class="detail-label" data-translate="amount-range">Amount Range:</span>
+                            <span class="detail-value">GHS 2,000 - 100,000</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label" data-translate="interest-rate">Interest Rate:</span>
+                            <span class="detail-value">14% - 20% p.a.</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label" data-translate="repayment-period">Repayment Period:</span>
+                            <span class="detail-value">6 - 36 months</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 data-translate="edu-loan">Education Loan</h3>
+                    <p data-translate="edu-loan-desc">Invest in your children's future with education financing</p>
+                    <div class="product-details">
+                        <div class="detail-row">
+                            <span class="detail-label" data-translate="amount-range">Amount Range:</span>
+                            <span class="detail-value">GHS 500 - 15,000</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label" data-translate="interest-rate">Interest Rate:</span>
+                            <span class="detail-value">8% - 12% p.a.</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label" data-translate="repayment-period">Repayment Period:</span>
+                            <span class="detail-value">6 - 24 months</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section" id="calculator">
+        <div class="container calculator-container">
+            <div>
+                <h2 data-translate="calculator-title">Loan Calculator</h2>
+                <p data-translate="calculator-description">Estimate your monthly repayments quickly.</p>
+            </div>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="amount" data-translate="loan-amount">Loan Amount (GHS)</label>
+                    <input type="number" id="amount" placeholder="5000">
+                </div>
+                <div class="form-group">
+                    <label for="interest" data-translate="interest-rate">Interest Rate (%)</label>
+                    <input type="number" id="interest" placeholder="12">
+                </div>
+                <div class="form-group">
+                    <label for="duration" data-translate="loan-duration">Loan Duration (Months)</label>
+                    <input type="number" id="duration" placeholder="12">
+                </div>
+                <button class="btn btn-primary" onclick="calculateLoan()" data-translate="calculate">Calculate</button>
+                <div class="calculator-result" id="resultBox" style="display:none;">
+                    <div class="result-item">
+                        <span data-translate="monthly-payment">Monthly Payment:</span>
+                        <span class="result-value" id="monthlyPayment">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span data-translate="total-repayment">Total Repayment:</span>
+                        <span class="result-value" id="totalRepayment">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branch Locator -->
+    <section class="branch-locator" id="branches">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="branch-locator-title">Find Our Branches</h2>
+                <p data-translate="branch-locator-subtitle">We serve all 16 regions of Ghana</p>
+            </div>
+            <div class="locator-container">
+                <div class="map-placeholder">
+                    <p data-translate="map-coming-soon">Map Integration Coming Soon</p>
+                </div>
+                <div class="branch-list">
+                    <div class="branch-item">
+                        <div class="branch-name">Accra Central Branch</div>
+                        <p><i class="fas fa-map-marker-alt"></i> <span data-translate="accra-location">Independence Avenue, Accra</span></p>
+                        <p><i class="fas fa-phone"></i> +233 24 673 8886</p>
+                    </div>
+                    <div class="branch-item">
+                        <div class="branch-name">Kumasi Branch</div>
+                        <p><i class="fas fa-map-marker-alt"></i> <span data-translate="kumasi-location">Adum, Kumasi</span></p>
+                        <p><i class="fas fa-phone"></i> +233 24 673 8887</p>
+                    </div>
+                    <div class="branch-item">
+                        <div class="branch-name">Tamale Branch</div>
+                        <p><i class="fas fa-map-marker-alt"></i> <span data-translate="tamale-location">Central Business District, Tamale</span></p>
+                        <p><i class="fas fa-phone"></i> +233 24 673 8888</p>
+                    </div>
+                    <div class="branch-item">
+                        <div class="branch-name">Takoradi Branch</div>
+                        <p><i class="fas fa-map-marker-alt"></i> <span data-translate="takoradi-location">Market Circle, Takoradi</span></p>
+                        <p><i class="fas fa-phone"></i> +233 24 673 8889</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 data-translate="about-title">About Vinberly</h2>
+                    <p data-translate="about-p1">Vinberly Micro Credit Enterprise has been a trusted financial partner for Ghanaians since 2009. We are committed to providing accessible and affordable financial services to empower small businesses, traders, and farmers across all 16 regions of Ghana.</p>
+                    <p data-translate="about-p2">With over 15 years of experience, we have developed a deep understanding of the unique financial challenges faced by our clients. Our tailored loan products and personalized service have helped thousands of Ghanaians achieve their dreams.</p>
+                    <div class="hero-cta" style="margin-top: 30px;">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-phone"></i>
+                            <span data-translate="contact-us">Contact Us</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <p data-translate="about-image">About Us Image</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-translate="contact-title">Contact Us</h2>
+                <p data-translate="contact-subtitle">Get in touch with our team for assistance</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h3 data-translate="contact-form-title">Send us a message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name" data-translate="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-translate="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-translate="subject">Subject</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-translate="message">Message</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-translate="send-message">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info-section">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3 data-translate="head-office">Head Office</h3>
+                            <p data-translate="accra-location">Independence Avenue, Accra, Ghana</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 data-translate="call-us">Call Us</h3>
+                            <p>+233 24 673 8886</p>
+                            <p>+233 24 673 8887</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 data-translate="email-us">Email Us</h3>
+                            <p>info@vinberly.com</p>
+                            <p>support@vinberly.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 data-translate="working-hours">Working Hours</h3>
+                            <p data-translate="working-week">Monday-Friday: 8:00 AM - 5:00 PM</p>
+                            <p data-translate="working-sat">Saturday: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apply Section -->
+    <section class="calculator-section" id="apply" style="background: var(--accent-green);">
+        <div class="container calculator-container">
+            <div>
+                <h2 data-translate="apply-title">Apply for a Loan</h2>
+                <p data-translate="apply-description">Start your application process in just a few minutes.</p>
+            </div>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="fullname" data-translate="full-name">Full Name</label>
+                    <input type="text" id="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" data-translate="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-translate="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="loan-type" data-translate="loan-type">Loan Type</label>
+                    <select id="loan-type" required>
+                        <option value="" disabled selected data-translate="select-loan">Select Loan Type</option>
+                        <option value="business" data-translate="business-loan">Business Expansion Loan</option>
+                        <option value="agriculture" data-translate="agric-loan">Agricultural Loan</option>
+                        <option value="home" data-translate="home-loan">Home Improvement Loan</option>
+                        <option value="education" data-translate="edu-loan">Education Loan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount" data-translate="loan-amount">Loan Amount (GHS)</label>
+                    <input type="number" id="amount" required>
+                </div>
+                <button class="btn btn-primary" data-translate="submit-application">Submit Application</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="contact-us">Contact Us</h3>
+                    <ul>
+                        <li><a href="tel:+233246738886"><i class="fas fa-phone"></i> +233 24 673 8886</a></li>
+                        <li><a href="mailto:info@vinberly.com"><i class="fas fa-envelope"></i> info@vinberly.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> <span data-translate="accra-location">Accra, Ghana</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-translate="quick-links">Quick Links</h3>
+                    <ul>
+                        <li><a href="#home" data-translate="nav-home">Home</a></li>
+                        <li><a href="#loans" data-translate="nav-loans">Loans</a></li>
+                        <li><a href="#calculator" data-translate="nav-calculator">Calculator</a></li>
+                        <li><a href="#branches" data-translate="nav-branches">Branches</a></li>
+                        <li><a href="#about" data-translate="nav-about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-translate="follow-us">Follow Us</h3>
+                    <ul>
+                        <li><a href="https://www.facebook.com/vinberly" target="_blank">Facebook</a></li>
+                        <li><a href="https://twitter.com/vinberly" target="_blank">Twitter</a></li>
+                        <li><a href="https://www.linkedin.com/company/vinberly" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.tiktok.com/@vinberly" target="_blank">TikTok</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-translate="newsletter">Newsletter</h3>
+                    <p data-translate="newsletter-desc">Subscribe for financial tips and updates</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-translate="subscribe">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Vinberly Micro Credit Enterprise. <span data-translate="all-rights">All Rights Reserved</span>.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Language notification -->
+    <div class="lang-notification" id="langNotification">
+        <i class="fas fa-language fa-2x"></i>
+        <div>
+            <span id="langMessage">Language changed to English</span>
+        </div>
+    </div>
+
+    <script>
+        // Language translations
+        const translations = {
+            en: {
+                // Navigation
+                "nav-home": "Home",
+                "nav-loans": "Loans",
+                "nav-calculator": "Calculator",
+                "nav-branches": "Branches",
+                "nav-about": "About",
+                "nav-contact": "Contact",
+                "apply-now": "Apply Now",
+                
+                // Hero section
+                "hero-title": "Empowering Ghanaian Dreams Through Accessible Finance",
+                "hero-subtitle": "Fast, Flexible, Fair - Your Trusted Financial Partner Since 2009",
+                "apply-loan": "Apply for Loan",
+                "calculate-repayment": "Calculate Repayment",
+                "find-branch": "Find Branch",
+                "satisfied-customers": "Satisfied Customers",
+                "years-trust": "Years of Trust",
+                "loans-disbursed": "Loans Disbursed",
+                "branches-nationwide": "Branches Nationwide",
+                
+                // Loan Products
+                "loan-products-title": "Our Loan Products",
+                "loan-products-subtitle": "Tailored financial solutions for every need",
+                "business-loan": "Business Expansion Loan",
+                "business-loan-desc": "Fuel your business growth with flexible financing options",
+                "agric-loan": "Agricultural Loan",
+                "agric-loan-desc": "Support for farmers to maximize harvest potential",
+                "home-loan": "Home Improvement Loan",
+                "home-loan-desc": "Renovate and upgrade your living space",
+                "edu-loan": "Education Loan",
+                "edu-loan-desc": "Invest in your children's future with education financing",
+                "amount-range": "Amount Range:",
+                "interest-rate": "Interest Rate:",
+                "repayment-period": "Repayment Period:",
+                
+                // Calculator
+                "calculator-title": "Loan Calculator",
+                "calculator-description": "Estimate your monthly repayments quickly.",
+                "loan-amount": "Loan Amount (GHS)",
+                "loan-duration": "Loan Duration (Months)",
+                "calculate": "Calculate",
+                "monthly-payment": "Monthly Payment:",
+                "total-repayment": "Total Repayment:",
+                
+                // Branches
+                "branch-locator-title": "Find Our Branches",
+                "branch-locator-subtitle": "We serve all 16 regions of Ghana",
+                "map-coming-soon": "Map Integration Coming Soon",
+                "accra-location": "Independence Avenue, Accra",
+                "kumasi-location": "Adum, Kumasi",
+                "tamale-location": "Central Business District, Tamale",
+                "takoradi-location": "Market Circle, Takoradi",
+                
+                // About
+                "about-title": "About Vinberly",
+                "about-p1": "Vinberly Micro Credit Enterprise has been a trusted financial partner for Ghanaians since 2009. We are committed to providing accessible and affordable financial services to empower small businesses, traders, and farmers across all 16 regions of Ghana.",
+                "about-p2": "With over 15 years of experience, we have developed a deep understanding of the unique financial challenges faced by our clients. Our tailored loan products and personalized service have helped thousands of Ghanaians achieve their dreams.",
+                "contact-us": "Contact Us",
+                "about-image": "About Us Image",
+                
+                // Contact
+                "contact-title": "Contact Us",
+                "contact-subtitle": "Get in touch with our team for assistance",
+                "contact-form-title": "Send us a message",
+                "name": "Full Name",
+                "email": "Email Address",
+                "subject": "Subject",
+                "message": "Message",
+                "send-message": "Send Message",
+                "head-office": "Head Office",
+                "call-us": "Call Us",
+                "email-us": "Email Us",
+                "working-hours": "Working Hours",
+                "working-week": "Monday-Friday: 8:00 AM - 5:00 PM",
+                "working-sat": "Saturday: 9:00 AM - 1:00 PM",
+                
+                // Apply
+                "apply-title": "Apply for a Loan",
+                "apply-description": "Start your application process in just a few minutes.",
+                "full-name": "Full Name",
+                "phone": "Phone Number",
+                "loan-type": "Loan Type",
+                "select-loan": "Select Loan Type",
+                "submit-application": "Submit Application",
+                
+                // Footer
+                "quick-links": "Quick Links",
+                "follow-us": "Follow Us",
+                "newsletter": "Newsletter",
+                "newsletter-desc": "Subscribe for financial tips and updates",
+                "subscribe": "Subscribe",
+                "all-rights": "All Rights Reserved"
+            },
+            
+tw: {
+  // Navigation
+  "nav-home": "Fie",
+  "nav-loans": "Nkwan",
+  "nav-calculator": "Akontaabu",
+  "nav-branches": "Nkyɛmu",
+  "nav-about": "Fa ho",
+  "nav-contact": "Frɛ yɛn",
+  "apply-now": "Fa akyɛde no",
+
+  // Hero section
+  "hero-title": "Boa Ghananifo Ma Wɔn Nso So So Asoɔre",
+  "hero-subtitle": "Ntɛm, Fɛw, Ne Papa - Wo gyidie som bo fi afe 2009",
+  "apply-loan": "Fa nkwan",
+  "calculate-repayment": "Bɔ akontaa ka no",
+  "find-branch": "Hwehwɛ nkyɛmu",
+  "satisfied-customers": "Anigye nnipa",
+  "years-trust": "Mfe a yɛwɔ mu",
+  "loans-disbursed": "Nkwan a wɔama",
+  "branches-nationwide": "Nkyɛmu wɔ Ghana nyinaa",
+
+  // Loan Products
+  "loan-products-title": "Yɛn Nkwan",
+  "loan-products-subtitle": "Sikasɛm a ɛfata w’abrabɔ ho",
+  "business-loan": "Adwuma Nkwan",
+  "business-loan-desc": "Siesie wo nsa so adwuma",
+  "agric-loan": "Akonua Nkwan",
+  "agric-loan-desc": "Boa akuafo ma wɔn tumi sɛeɛ",
+  "home-loan": "Efie Nsiesie Nkwan",
+  "home-loan-desc": "Siesie na kanyan wo efie",
+  "edu-loan": "Suku Nkwan",
+  "edu-loan-desc": "Boa wo mma sukuu mu",
+  "amount-range": "Sika dodow:",
+  "interest-rate": "Ka ho sika:",
+  "repayment-period": "Siesie bere:",
+
+  // Calculator
+  "calculator-title": "Nkwan Akontaabu",
+  "calculator-description": "Toto siesie ho sika ntɛm",
+  "loan-amount": "Nkwan ho sika (GHS)",
+  "loan-duration": "Nkwan bere (Bosome)",
+  "calculate": "Toto",
+  "monthly-payment": "Bosome biako ka:",
+  "total-repayment": "Sika a ɛwɔ mu nyinaa:",
+
+  // Branches
+  "branch-locator-title": "Hwehwɛ yɛn nkyɛmu",
+  "branch-locator-subtitle": "Yɛwɔ amanmu a ɛboro 16",
+  "map-coming-soon": "Maa ho mapa reba ntɛm",
+  "accra-location": "Independence Avenue, Accra",
+  "kumasi-location": "Adum, Kumasi",
+  "tamale-location": "Central Business District, Tamale",
+  "takoradi-location": "Market Circle, Takoradi",
+
+  // About
+  "about-title": "Fa ho - Vinberly",
+  "about-p1": "Vinberly Micro Credit Enterprise yɛ sikasɛm ahyehyɛde a Ghanafo de wɔn ho to mu fi afe 2009. Yɛboa nnipa, nkwadaa, ne nkuafo a wɔwɔ Ghana nyinaa.",
+  "about-p2": "Yɛwɔ mfe 15 a yɛayɛ saa dwuma no, enti yɛte nsɛnnennen a Ghanafo wɔ. Yɛn nkwan a yɛde to Ghanafo so aboa wɔn abɛdu wɔn anidaso.",
+  "contact-us": "Frɛ yɛn",
+  "about-image": "Fa ho mfonini",
+
+  // Contact
+  "contact-title": "Frɛ yɛn",
+  "contact-subtitle": "Fa wo ho to yɛn so ma yɛboa wo",
+  "contact-form-title": "Twerɛ krataa kɔma yɛn",
+  "name": "Din a ɛyɛ",
+  "email": "Email",
+  "subject": "Asɛm",
+  "message": "Krataa no",
+  "send-message": "Twerɛ na soma",
+  "head-office": "Ti Ofie",
+  "call-us": "Frɛ yɛn",
+  "email-us": "Soma email",
+  "working-hours": "Adwumadie bere",
+  "working-week": "Dwowda - Fida: 8:00 AN - 5:00 EW",
+  "working-sat": "Memeneda: 9:00 AN - 1:00 EW",
+
+  // Apply
+  "apply-title": "Fa Nkwan",
+  "apply-description": "Hyɛ ase ntɛm wɔ sɛnkanee mmom",
+  "full-name": "Din a ɛyɛ",
+  "phone": "Fɔn nɔma",
+  "loan-type": "Nkwan No Bɔho",
+  "select-loan": "Paw nkwan no",
+  "submit-application": "Fa krataa no",
+
+  // Footer
+  "quick-links": "Ntɛm Mmerɛ Links",
+  "follow-us": "Di yɛn akyi",
+  "newsletter": "Nnwoma krataa",
+  "newsletter-desc": "Bɔ wo din na nya nsɛm foforo",
+  "subscribe": "Bɔ din",
+  "all-rights": "Wɔn ho yɛ hɔ nyinaa"
+},
+ga: {
+                // Navigation
+                "nav-home": "Shi",
+                "nav-loans": "Mɔɔ",
+                "nav-calculator": "Kalkuleta",
+                "nav-branches": "Buleji",
+                "nav-about": "Nyaa",
+                "nav-contact": "Tsɔɔ mi",
+                "apply-now": "Sɔ mi mɔɔ",
+                
+                // Hero section
+                "hero-title": "Mɔɔ Kɛɛ Ga Mɔŋtsɛ Yɛ Shikahã He",
+                "hero-subtitle": "Tɛŋtɛŋ, Fɛɛfɛɛ, Nya Shika Hɛ Mi Mɔkɛ 2009",
+                "apply-loan": "Sɔ Mi Mɔɔ",
+                "calculate-repayment": "Kale Mi Wole",
+                "find-branch": "Kɛ Buleji",
+                "satisfied-customers": "Asafo Nii Yɛɛ Dɔ",
+                "years-trust": "Afee Nii Shia Hɛ",
+                "loans-disbursed": "Mɔɔ Nii Wɔ Mɔ",
+                "branches-nationwide": "Buleji Nii Wɔ Mɔ",
+                
+                // Loan Products
+                "loan-products-title": "Hɛ Mɔɔ Nii",
+                "loan-products-subtitle": "Shika Hɛ Mi Nii Kɛɛ Wɔ Hɛ Mli",
+                "business-loan": "Shika Hɛ Mi Kɛ Adwuma",
+                "business-loan-desc": "Di W'adwuma Anɔkwalɛ Kɛ Shika Hɛ Mi Nii",
+                "agric-loan": "Kuafo Mɔɔ",
+                "agric-loan-desc": "Bo Kuafo Nii Anɔkwalɛ Kɛ Shika",
+                "home-loan": "Shika Kɛ Ofee",
+                "home-loan-desc": "Yɛɛ W'ofee Yɛ Bɔɔ",
+                "edu-loan": "Sukuu Mɔɔ",
+                "edu-loan-desc": "Di W'ɔbaa Sukuu Yɛɛ Anɔkwalɛ",
+                "amount-range": "Shika Kɛɛ:",
+                "interest-rate": "Mɔɔ Tɔɔ:",
+                "repayment-period": "Wole Afee:",
+                
+                // Calculator
+                "calculator-title": "Mɔɔ Kalkuleta",
+                "calculator-description": "Kale Wole Wɔ Tɛŋtɛŋ.",
+                "loan-amount": "Mɔɔ Kɛɛ (GHS)",
+                "loan-duration": "Mɔɔ Afee (Bosome)",
+                "calculate": "Kale",
+                "monthly-payment": "Bosome Wole:",
+                "total-repayment": "Wole Kɛɛ:",
+                
+                // Branches
+                "branch-locator-title": "Kɛ Hɛ Buleji",
+                "branch-locator-subtitle": "Ye Wɔ Ghana Afee 16 Mli",
+                "map-coming-soon": "Map Bɛba Afeji",
+                "accra-location": "Independence Avenue, Accra",
+                "kumasi-location": "Adum, Kumasi",
+                "tamale-location": "Central Business District, Tamale",
+                "takoradi-location": "Market Circle, Takoradi",
+                
+                // About
+                "about-title": "Nyaa Vinberly",
+                "about-p1": "Vinberly Micro Credit Enterprise Ye Shika Hɛ Mi Mɔkɛ Ga Mɔŋtsɛ Fi 2009. Ye Wɔ Shika Hɛ Mi Nii Kɛɛ Adwumayɛfo, Adɛtɔfo, Kɛ Kuafo Nii Wɔ Ghana Afee 16 Mli.",
+                "about-p2": "Kɛ Afee 15 Nii Yɛɛ, Ayaa Nyaa Kɛɛ Ga Mɔŋtsɛ Shika Hɛ Mi Nii. Ye Mɔɔ Nii Kɛ Ye Nyaa Bo Mɔŋtsɛ Nii Anɔkwalɛ.",
+                "contact-us": "Tsɔɔ Mi",
+                "about-image": "Nyaa Mi Foto",
+                
+                // Contact
+                "contact-title": "Tsɔɔ Mi",
+                "contact-subtitle": "Tsɔɔ Mi Hɛ Mi Nii Kɛ Bo",
+                "contact-form-title": "Sɔɛ Mi Lɛta",
+                "name": "Wɔ Fɛɛ Ko",
+                "email": "Email",
+                "subject": "Lɛta Mɔkɛ",
+                "message": "Lɛta",
+                "send-message": "Sɔ Lɛta",
+                "head-office": "Papa Ofee",
+                "call-us": "Frɛ Mi",
+                "email-us": "Sɔ Mi Email",
+                "working-hours": "Adwuma Bere",
+                "working-week": "Dwowda-Fida: 8:00 AN - 5:00 EW",
+                "working-sat": "Memeneda: 9:00 AN - 1:00 EW",
+                
+                // Apply
+                "apply-title": "Sɔ Mi Mɔɔ",
+                "apply-description": "Fii Mɔɔ Sɔ Mi Wɔ Minti Kakra.",
+                "full-name": "Wɔ Fɛɛ Ko",
+                "phone": "Foon Nɔma",
+                "loan-type": "Mɔɔ Mɔkɛ",
+                "select-loan": "Tee Mɔɔ Mɔkɛ",
+                "submit-application": "Sɔ Mɔɔ",
+                
+                // Footer
+                "quick-links": "Kɛ Mi Lɛŋk Nii",
+                "follow-us": "Di Mi Hɔ",
+                "newsletter": "Lɛta",
+                "newsletter-desc": "Gbo Lɛta Kɛ Shika Nyaa",
+                "subscribe": "Gbo Lɛta",
+                "all-rights": "Ye Wɔ Mi Nyaa Nii"
+            },
+            ee: {
+                // Navigation
+                "nav-home": "Dƒ",
+                "nav-loans": "Gaxƒxƒ",
+                "nav-calculator": "Kalkulato",
+                "nav-branches": "Fiƒuwo",
+                "nav-about": "Nya",
+                "nav-contact": "Nɔƒe",
+                "apply-now": "Ðe gaxƒxƒ nu",
+                
+                // Hero section
+                "hero-title": "Míaƒe Gaxƒxƒ le Ghanaƒe Dɔwɔƒewo Ŋu",
+                "hero-subtitle": "Viviti, Tɔtrɔ, Nyonɔ - Wò Gaxƒxƒ Kpɔɖeŋula tso 2009",
+                "apply-loan": "Ðe gaxƒxƒ nu",
+                "calculate-repayment": "Kpɔ gaxƒxƒ ɖoɖo",
+                "find-branch": "Kpɔ fiƒu",
+                "satisfied-customers": "Dɔwɔlawo Ɖokui",
+                "years-trust": "Ƒe siwo me wò dze ɖe mía ŋu",
+                "loans-disbursed": "Gaxƒxƒ siwo wò xɔ",
+                "branches-nationwide": "Fiƒuwo le Ghana katã me",
+                
+                // Loan Products
+                "loan-products-title": "Míaƒe Gaxƒxƒwo",
+                "loan-products-subtitle": "Gaxƒxƒ siwo wòaƒo na wò dɔwɔƒe",
+                "business-loan": "Dɔwɔƒe Gaxƒxƒ",
+                "business-loan-desc": "Ðe wò dɔwɔƒe nu kpɔɖeŋu",
+                "agric-loan": "Agbledeƒe Gaxƒxƒ",
+                "agric-loan-desc": "Kpɔɖeŋu na aƒeƒewo",
+                "home-loan": "Aƒe Gaxƒxƒ",
+                "home-loan-desc": "Wò aƒe ƒe ɖoɖo",
+                "edu-loan": "Suku Gaxƒxƒ",
+                "edu-loan-desc": "Ðe wò vi suku nu",
+                "amount-range": "Ga kɛkɛ:",
+                "interest-rate": "Gaxƒxƒ tɔ:",
+                "repayment-period": "Ga ɖoɖo ƒe ɣeyiɣi:",
+                
+                // Calculator
+                "calculator-title": "Gaxƒxƒ Kalkulato",
+                "calculator-description": "Kpɔ gaxƒxƒ ɖoɖo le viviti me.",
+                "loan-amount": "Gaxƒxƒ Kɛkɛ (GHS)",
+                "loan-duration": "Gaxƒxƒ Ɣeyiɣi (Aɣa)",
+                "calculate": "Kpɔ",
+                "monthly-payment": "Ɖoɖo le ɣleti me:",
+                "total-repayment": "Ga ɖoɖo Katã:",
+                
+                // Branches
+                "branch-locator-title": "Kpɔ Míaƒe Fiƒuwo",
+                "branch-locator-subtitle": "Mía le Ghana ƒe nuto 16 me",
+                "map-coming-soon": "Map bɛba",
+                "accra-location": "Independence Avenue, Accra",
+                "kumasi-location": "Adum, Kumasi",
+                "tamale-location": "Central Business District, Tamale",
+                "takoradi-location": "Market Circle, Takoradi",
+                
+                // About
+                "about-title": "Nya Vinberly",
+                "about-p1": "Vinberly Micro Credit Enterprise nye gaxƒxƒ kpɔɖeŋula na Ghanaƒe tso 2009. Mía ɖe gaxƒxƒ viviti na dɔwɔƒe yutowo, aƒeƒewo, kple adeƒewo le Ghana ƒe nuto 16 me.",
+                "about-p2": "Kple ƒe 15 gbãtɔ, mía nya gaxƒxƒ nu kpɔɖeŋu. Míaƒe gaxƒxƒwo kple dɔwɔƒeaƒo kpe ɖe Ghanaƒe ŋu.",
+                "contact-us": "Nɔƒe",
+                "about-image": "Nya Míaƒe Foto",
+                
+                // Contact
+                "contact-title": "Nɔƒe",
+                "contact-subtitle": "Ðe míaƒe dɔwɔƒeaƒo nu",
+                "contact-form-title": "Ðe lɛtrɔ nu",
+                "name": "Ŋkɔ Dzesi",
+                "email": "Email",
+                "subject": "Lɛtrɔ ƒe nu",
+                "message": "Lɛtrɔ",
+                "send-message": "Ðe lɛtrɔ nu",
+                "head-office": "Fiƒe Papa",
+                "call-us": "Ðe míaƒo foon",
+                "email-us": "Ðe email nu",
+                "working-hours": "Dɔwɔƒe ƒe ɣeyiɣi",
+                "working-week": "Dzoɖa-Fida: 8:00 AN - 5:00 EW",
+                "working-sat": "Memleɖa: 9:00 AN - 1:00 EW",
+                
+                // Apply
+                "apply-title": "Ðe Gaxƒxƒ Nu",
+                "apply-description": "Fii gaxƒxƒ ɖoɖo le minti kakra me.",
+                "full-name": "Ŋkɔ Dzesi",
+                "phone": "Foon Nɔma",
+                "loan-type": "Gaxƒxƒ ƒe Dzesi",
+                "select-loan": "Tee gaxƒxƒ dzesi",
+                "submit-application": "Ðe gaxƒxƒ nu",
+                
+                // Footer
+                "quick-links": "Kɛ Mi Lɛŋk Nii",
+                "follow-us": "Di Míaƒe Ŋu",
+                "newsletter": "Lɛtrɔ",
+                "newsletter-desc": "Ðe lɛtrɔ nu na gaxƒxƒ nyawo",
+                "subscribe": "Ðe lɛtrɔ nu",
+                "all-rights": "Míaƒe Nyawo Katã"
+            },
+            ha: {
+                // Navigation
+                "nav-home": "Gida",
+                "nav-loans": "Lamuni",
+                "nav-calculator": "Kalkuleta",
+                "nav-branches": "Rassan",
+                "nav-about": "Game da",
+                "nav-contact": "Tuntuɓe",
+                "apply-now": "Aika bukata",
+                
+                // Hero section
+                "hero-title": "Ƙarfafa Burin Ghana Ta Hanyar Samun Kuɗi",
+                "hero-subtitle": "Sauri, Sassauƙa, Adalci - Abokin Kuɗin Ku Tun 2009",
+                "apply-loan": "Aika Bukatar Lamuni",
+                "calculate-repayment": "Ƙididdige Biyan Kuɗi",
+                "find-branch": "Nemo Reshe",
+                "satisfied-customers": "Abokan Ciniki Masu Gamsuwa",
+                "years-trust": "Shekarun Amincewa",
+                "loans-disbursed": "Lamunin Da Aka Bayar",
+                "branches-nationwide": "Rassan A Duk Faɗin Ƙasa",
+                
+                // Loan Products
+                "loan-products-title": "Lamunin Mu",
+                "loan-products-subtitle": "Magungunan Kuɗi Na Kowane Bukatu",
+                "business-loan": "Lamunin Fadada Kasuwanci",
+                "business-loan-desc": "Ƙarfafa Kasuwancin Ku Ta Hanyar Lamuni",
+                "agric-loan": "Lamunin Noma",
+                "agric-loan-desc": "Taimako Ga Manoma Don Haɓaka Amfanin Gona",
+                "home-loan": "Lamunin Gyara Gida",
+                "home-loan-desc": "Gyara Da Haɓaka Matsayin Zama",
+                "edu-loan": "Lamunin Ilimi",
+                "edu-loan-desc": "Zuba Jari Ga Makomar Yara Ku",
+                "amount-range": "Adadin Kuɗi:",
+                "interest-rate": "Kuɗin Ruwa:",
+                "repayment-period": "Lokacin Biya:",
+                
+                // Calculator
+                "calculator-title": "Kalkuleta Lamuni",
+                "calculator-description": "Ƙididdige Biyan Kuɗi Da Sauri.",
+                "loan-amount": "Adadin Lamuni (GHS)",
+                "loan-duration": "Tsawon Lamuni (Watan)",
+                "calculate": "Ƙididdige",
+                "monthly-payment": "Biya Kowace Wata:",
+                "total-repayment": "Jimlar Biya:",
+                
+                // Branches
+                "branch-locator-title": "Nemo Rassan Mu",
+                "branch-locator-subtitle": "Muna Hidima A Dukkan Yankuna 16 Na Ghana",
+                "map-coming-soon": "Taswirar Ta Zo Nan Ba Da Jimawa Ba",
+                "accra-location": "Independence Avenue, Accra",
+                "kumasi-location": "Adum, Kumasi",
+                "tamale-location": "Central Business District, Tamale",
+                "takoradi-location": "Market Circle, Takoradi",
+                
+                // About
+                "about-title": "Game da Vinberly",
+                "about-p1": "Vinberly Micro Credit Enterprise ta kasance amintacciyar hanyar samun kuɗi ga 'yan Ghana tun 2009. Muna ba da sabis na kuɗi mai sauƙi ga ƙananan 'yan kasuwa, manoma a dukkan yankuna 16 na Ghana.",
+                "about-p2": "Tare da fiye da shekaru 15, mun sami fahimtar matsalolin kuɗi. Lamuninmu da sabis ɗinmu sun taimaka wa dubban 'yan Ghana su cimma burinsu.",
+                "contact-us": "Tuntuɓe Mu",
+                "about-image": "Hoton Game da Mu",
+                
+                // Contact
+                "contact-title": "Tuntuɓe Mu",
+                "contact-subtitle": "Tuntuɓi Ƙungiyar Mu Don Taimako",
+                "contact-form-title": "Aiko Manzo",
+                "name": "Cikakken Suna",
+                "email": "Adireshin Imel",
+                "subject": "Batun",
+                "message": "Saƙo",
+                "send-message": "Aika Saƙo",
+                "head-office": "Babban Ofis",
+                "call-us": "Kira Mu",
+                "email-us": "Aiko Imel",
+                "working-hours": "Lokutan Aiki",
+                "working-week": "Litinin-Juma'a: 8:00 AM - 5:00 PM",
+                "working-sat": "Asabar: 9:00 AM - 1:00 PM",
+                
+                // Apply
+                "apply-title": "Aika Bukatar Lamuni",
+                "apply-description": "Fara aikace-aikacen ku cikin 'yan mintoci kaɗan.",
+                "full-name": "Cikakken Suna",
+                "phone": "Lambar Waya",
+                "loan-type": "Nau'in Lamuni",
+                "select-loan": "Zaɓi Nau'in Lamuni",
+                "submit-application": "Aika Aikace-aikace",
+                
+                // Footer
+                "quick-links": "Hanyoyin Da Saurin Samu",
+                "follow-us": "Bi Mu",
+                "newsletter": "Wasikar Labarai",
+                "newsletter-desc": "Yi Rajista Don Karin Bayani Kan Kuɗi",
+                "subscribe": "Yi Rajista",
+                "all-rights": "Duk Haƙƙoƙin Kariya"
+            }
+        };
+
+        // Language switcher functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageSelector = document.getElementById('languageSelector');
+            const langNotification = document.getElementById('langNotification');
+            const langMessage = document.getElementById('langMessage');
+            
+            // Set initial language from localStorage or default to English
+            const currentLang = localStorage.getItem('selectedLang') || 'en';
+            languageSelector.value = currentLang;
+            updatePageLanguage(currentLang);
+            
+            // Language selector change event
+            languageSelector.addEventListener('change', function() {
+                const selectedLang = this.value;
+                localStorage.setItem('selectedLang', selectedLang);
+                updatePageLanguage(selectedLang);
+                
+                // Show notification
+                const langName = {
+                    'en': 'English',
+                    'tw': 'Twi',
+                    'ga': 'Ga',
+                    'ee': 'Ewe',
+                    'ha': 'Hausa'
+                }[selectedLang];
+                
+                langMessage.textContent = `Language changed to ${langName}`;
+                langNotification.classList.add('show');
+                
+                setTimeout(() => {
+                    langNotification.classList.remove('show');
+                }, 3000);
+            });
+            
+            // Mobile menu toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+
+        function updatePageLanguage(lang) {
+            // Update all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update select options (like loan types)
+            document.querySelectorAll('option[data-translate]').forEach(option => {
+                const key = option.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    option.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        // Loan calculator function
+        function calculateLoan() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const interest = parseFloat(document.getElementById('interest').value);
+            const duration = parseInt(document.getElementById('duration').value);
+            
+            if (isNaN(amount) || isNaN(interest) || isNaN(duration)) {
+                alert('Please fill in all fields with valid numbers');
+                return;
+            }
+            
+            const monthlyInterest = interest / 100 / 12;
+            const monthlyPayment = (amount * monthlyInterest) / (1 - Math.pow(1 + monthlyInterest, -duration));
+            const totalRepayment = monthlyPayment * duration;
+            
+            document.getElementById('monthlyPayment').textContent = 'GHS ' + monthlyPayment.toFixed(2);
+            document.getElementById('totalRepayment').textContent = 'GHS ' + totalRepayment.toFixed(2);
+            document.getElementById('resultBox').style.display = 'block';
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Carousel functionality
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function goToSlide(index) {
+            const track = document.querySelector('.carousel-track');
+            track.style.transform = `translateX(-${index * 33.33}%)`;
+            
+            // Update indicators
+            indicators.forEach((indicator, i) => {
+                if (i === index) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+            
+            currentSlide = index;
+        }
+
+        function startCarousel() {
+            slideInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % 3;
+                goToSlide(currentSlide);
+            }, 5000);
+        }
+
+        // Initialize carousel
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                goToSlide(index);
+                startCarousel();
+            });
+        });
+
+        startCarousel();
+    </script>
+</body>
+</html>
